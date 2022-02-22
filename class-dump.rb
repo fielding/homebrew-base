@@ -1,7 +1,7 @@
 class ClassDump < Formula
   desc "Generate Objective-C headers from Mach-O files."
   homepage "http://stevenygard.com/projects/class-dump"
-  url "https://github.com/nygard/class-dump/archive/3.5.tar.gz"
+  head "https://github.com/kristopherjohnson/class-dump.git"
   sha256 "94f5286c657dca02dbed4514b2dbd791b42ecef5122e3945a855caf8d1f65e64"
 
   depends_on :xcode => :build
@@ -11,9 +11,7 @@ class ClassDump < Formula
                           "Release",
                           "SYMROOT=build",
                           "PREFIX=#{prefix}",
-                          "ONLY_ACTIVE_ARCH=NO",
-                          "OTHER_CFLAGS=-I/usr/local/opt/openssl/include",
-                          "OTHER_LDFLAGS=-L/usr/local/opt/openssl/lib"
+                          "ONLY_ACTIVE_ARCH=YES"
     bin.install "build/Release/class-dump"
   end
 
